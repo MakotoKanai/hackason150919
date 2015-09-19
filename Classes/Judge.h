@@ -11,4 +11,14 @@
 
 #include <stdio.h>
 
+#include "Arrangement.h"
+#include "fairy.h"
+
+class Judge{
+public:
+    static void judge(int x, int y);
+    static bool judgeDelete(fairy* fairyMale, fairy* fairyFemale);
+};
+
+
 #endif /* defined(____Judge__) */
