@@ -16,8 +16,9 @@
 
 class Judge{
 public:
-    void judge::judge(int x, int y);
-    bool Judge::judgeDelete(fairy* fairyMale, fairy* fairyFemale);
+    static void judge(int x, int y);
+    static bool judgeDelete(fairy* fairyMale, fairy* fairyFemale);
 };
+
 
 #endif /* defined(____Judge__) */

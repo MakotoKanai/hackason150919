@@ -19,21 +19,21 @@ void judge::judge(int x, int y)
     ret_right = judgeDelete(fairys[x][y], fairys[x+1][y]);//右の妖精とのマッチング判定
 
     if (ret_left || ret_up || ret_right) {
-        fairys[x][y].kill();
+        fairys[x][y]->kill();
     }
     
     if (ret_left) {
-        fairys[x-1][y].kill();
-        Arrangement.arrangement(x-1, y);
+        fairys[x-1][y]->kill();
+        Arrangement::arrangement(x-1, y);
     }
     
     if (ret_up) {
-        fairys[x][y-1].kill();
+        fairys[x][y-1]->kill();
     }
     
     if (ret_right) {
-        fairys[x+1][y].kill();
-        Arrangement.arrangement(x+1, y);
+        fairys[x+1][y]->kill();
+        Arrangement::arrangement(x+1, y);
     }
     
 
@@ -45,7 +45,7 @@ bool Judge::judgeDelete(fairy* fairyMale, fairy* fairyFemale)
 {
     bool flag;
     
-    if (fairyMale.getType(); == fairyFemale.getType()) {
+    if (fairyMale->getType(); == fairyFemale->getType()) {
         flag = true;
     } else {
         flag = false;

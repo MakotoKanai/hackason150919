@@ -13,4 +13,10 @@
 
 #include "cocos2d.h"
 
+class Animation
+{
+public:
+    static void move(cocos2d::Sprite* sprite);
+};
+
 #endif /* defined(____Animation__) */
