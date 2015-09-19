@@ -1,5 +1,8 @@
 #include "cocos2d.h"
 
+#ifndef _FAIRY_H_
+#define _FAIRY_H_
+
 enum FairyTypes
 {
 	None = 0,
@@ -36,3 +39,4 @@ public:
 
 	cocos2d::Sprite *getSprite() { return sprite; }
 };
+#endif
