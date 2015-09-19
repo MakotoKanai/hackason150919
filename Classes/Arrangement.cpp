@@ -7,3 +7,8 @@
 //
 
 #include "Arrangement.h"
+
+void Arrangement::arrangement
+{
+    
+}
