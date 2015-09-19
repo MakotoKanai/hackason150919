@@ -1,3 +1,4 @@
+#include "cocos2d.h"
 
 enum FairyTypes
 {
@@ -18,10 +19,13 @@ class Fairy
 {
 private:
 	int type;
+	cocos2d::Sprite *sprite;
 
 public:
-	Fairy(int t) :
-		type(t)
+	Fairy() : type(None), sprite(0)
+	{}
+	Fairy(int t, cocos2d::Sprite *s) :
+		type(t), sprite(s)
 	{
 	}
 	
@@ -29,4 +33,6 @@ public:
 	bool isAlive() { return type != None; }
 	
 	int getType() { return type; }
+
+	cocos2d::Sprite *getSprite() { return sprite; }
 };
