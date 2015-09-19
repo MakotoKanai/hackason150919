@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "const.h"
 #include "fairy.h"
 
 
@@ -29,10 +30,16 @@ public:
 	unsigned int score;
 	float lastIncreese;
 
+	float tableOriginX;
+	float tableOriginY;
+
 	// methods
 	void gameInit();
 
 	void update(float time);
+	  	Fairy&& createFairy(int type, float fx, float fy);
+	Fairy&& createFairy(int type, int ix, int iy);
+
 	/// MakotoKanai work ////////////
 
 

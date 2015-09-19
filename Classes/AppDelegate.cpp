@@ -34,13 +34,21 @@ static int register_all_packages()
     return 0; //flag for packages manager
 }
 
+#define WIDTH 400
+#define HEIGHT 640
+
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
-        director->setOpenGLView(glview);
+        //glview = GLViewImpl::create("My Game");
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		glview = GLViewImpl::createWithRect("My Game", Rect(0, 0, WIDTH, HEIGHT));
+#else
+		glview = GLView::create("My Game");
+#endif
+		director->setOpenGLView(glview);
     }
 
     // turn on display FPS
