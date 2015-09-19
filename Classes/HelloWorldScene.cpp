@@ -102,7 +102,11 @@ void HelloWorld::gameInit()
 
 void HelloWorld::update(float time)
 {
-	
+	// 消えるアニメーションの途中か判別して、アニメーションが終了していると判断したら再度呼び直す
+	//if (isDeleted)
+	{
+
+	}
 }
 
 Fairy&& HelloWorld::createFairy(int type, float fx, float fy)
@@ -138,6 +142,44 @@ Fairy&& HelloWorld::createFairy(int type, int ix, int iy)
 	return createFairy(type, fx, fy);
 }
 
+
+void HelloWorld::callJudge()
+{
+	// とりあえず１回呼ぶ
+	bool isDeleted = false;// Jadge();
+
+	// 妖精が消されたならアニメーションの時間（１秒）待って、もう一度この関数を呼ぶ
+	lastCalledJudge = passedTime;
+	checkNextJudge = isDeleted;
+}
+
+// 妖精が投げられるかどうか判別
+bool HelloWorld::isAbleToThrow()
+{
+	return checkNextJudge && !isGameOver;
+}
+
+void HelloWorld::touchListner()
+{
+	// 動いているスプライトの取得
+	/*auto movingPos = movingFairy.getSprite()->GetPosition();
+	int ix = (pos.x - tableOriginX) / fairyWidth;
+	int iy = (pos.y - tableOriginY) / fairyHeight;
+
+	// 正常な範囲になるように
+	ix = ix < 0 ? 0 : ix >= tableWidth ? tableWidth : ix;
+	iy = iy < 0 ? 0 : iy >= tableHeight ? tableHeight : iy;
+
+	// 上に空きがあれば詰める
+	while (iy > 0 && fairys[ix][iy - 1].isAlive())
+		iy -= 1;
+
+	// 既に存在するなら下に
+	while (fairys[ix][iy].isAlive() && (iy += 1) < tableHeight);
+
+	// 判定関数を呼ぶ
+	callJudge();*/
+}
 
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

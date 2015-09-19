@@ -24,7 +24,8 @@ public:
 	static const int fairyTableHeight = 10;
 
 	Fairy fairy[fairyTableWidth][fairyTableHeight];
-	
+	Fairy movingFairy;
+
 	float passedTime;
 	bool isGameOver;
 	unsigned int score;
@@ -33,6 +34,9 @@ public:
 	float tableOriginX;
 	float tableOriginY;
 
+	bool lastCalledJudge;
+	bool checkNextJudge;
+
 	// methods
 	void gameInit();
 
@@ -40,6 +44,9 @@ public:
 	  	Fairy&& createFairy(int type, float fx, float fy);
 	Fairy&& createFairy(int type, int ix, int iy);
 
+	void callJudge();
+	bool isAbleToThrow();
+	void touchListner();
 	/// MakotoKanai work ////////////
 
 
