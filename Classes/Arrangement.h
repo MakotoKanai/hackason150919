@@ -11,4 +11,11 @@
 
 #include <stdio.h>
 
+class Arrangement
+{
+public:
+    void arrangement(int x, int y);
+    void arrangementMove(int x, int y);
+};
+
 #endif /* defined(____Arrangement__) */
