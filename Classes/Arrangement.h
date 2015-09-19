@@ -11,4 +11,14 @@
 
 #include <stdio.h>
 
+#include "Animation.h"
+
+class Arrangement
+{
+public:
+    static void arrangement(int x, int y);
+    static void arrangementMove(int x, int y);
+};
+
+
 #endif /* defined(____Arrangement__) */
