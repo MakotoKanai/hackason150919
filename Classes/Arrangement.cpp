@@ -23,7 +23,7 @@ void Arrangement::arrangement(int x, int y)
 void Arrangement::arrangementMove(int x, int y)
 {
     for (int i = 0; fairys[x][y+i]->isAlive(); i++) {
-        animation();
+        Animation.move(fairys[x][y+i].getSprite);
     }//下に妖精がいる限り、上に1つ移動するアニメーションを呼び出し
     
 }
